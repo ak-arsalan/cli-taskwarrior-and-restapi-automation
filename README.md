@@ -55,7 +55,7 @@ pytest
 9. **test_delete_cart**: Tests deleting a cart from the Fake Store API.
 
 ### Test Results:
-![Pytest-Results](./Results.png)
+![Pytest-Results](./Task_Results.png)
 
 ## Future Improvements:
 

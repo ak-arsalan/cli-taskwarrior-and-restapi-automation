@@ -6,8 +6,10 @@ def run_task_command(command):
     if result.returncode != 0:
         print(f"Error running command '{command}': {result.stderr}")
     return result.stdout.strip(), result.stderr.strip()
-    
-def test_recurring_task():
-    run_task_command('task add "Outing with Wife" due:tomorrow recur:weekly')
-    stdout, _ = run_task_command('task list')
-    assert "Outing with Wife" in stdout
+
+def test_tag_task():
+    run_task_command('task add "Plan Munich Tour in next month Vacation" due:eom')
+    run_task_command('task 6 modify +Vacation +Planning')
+    stdout, _ = run_task_command('task 6 info')
+    assert "Vacation" in stdout
+    assert "Planning" in stdout

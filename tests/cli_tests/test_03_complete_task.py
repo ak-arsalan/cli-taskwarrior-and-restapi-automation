@@ -7,7 +7,10 @@ def run_task_command(command):
         print(f"Error running command '{command}': {result.stderr}")
     return result.stdout.strip(), result.stderr.strip()
 
-def test_add_task():
-    run_task_command('task add "Submission of Assignment to Rasa" due:tomorrow')
+def test_complete_task():
+    run_task_command('task add "Given Task Done" due:today')
     stdout, _ = run_task_command('task list')
-    assert "Submission of Assignment to Rasa" in stdout
+    run_task_command('task 3 done')
+    stdout, _ = run_task_command('task completed')
+    assert "Given Task Done" in stdout
+

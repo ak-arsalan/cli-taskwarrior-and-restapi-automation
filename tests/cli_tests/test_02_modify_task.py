@@ -7,9 +7,8 @@ def run_task_command(command):
         print(f"Error running command '{command}': {result.stderr}")
     return result.stdout.strip(), result.stderr.strip()
 
-def test_tag_task():
-    run_task_command('task add "Plan Munich Tour Vacation" due:eom')
-    run_task_command('task 6 modify +Vacation +Planning')
-    stdout, _ = run_task_command('task 6 info')
-    assert "Vacation" in stdout
-    assert "Planning" in stdout
+def test_modify_task():
+    run_task_command('task add "Welcome to the Team" due:today')
+    run_task_command('task 2 modify description:"Welcome to the Team Arsalan" due:tomorrow')
+    stdout, _ = run_task_command('task 2 info')
+    assert "Welcome to the Team Arsalan" in stdout
