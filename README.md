@@ -41,6 +41,7 @@ pytest
 8. **Searching for Tasks by Tags**: Adds tasks with tags and checks if tasks with specific tags are listed correctly.
 9. **Recurring Tasks**: Adds a recurring task with a weekly recurrence and ensures it's listed correctly.
 10. **Annotating a Task**: Adds an annotation to a task and verifies if it's displayed correctly.
+11. **Append a Task**: Adds append keyword to a task and verifies if it's displayed correctly.
 
 ### Part 2 covers API Tests (Fake Store API)
 
@@ -53,13 +54,17 @@ pytest
 7. **test_add_new_cart**: Tests adding a new cart to the Fake Store API.
 8. **test_update_cart**: Tests updating an existing cart in the Fake Store API.
 9. **test_delete_cart**: Tests deleting a cart from the Fake Store API.
+10. **Add New Product**: Tests adding new product from Fake Store API.
 
 ### Test Results:
-![Pytest-Results](./Task_Results.png)
+![Pytest-Results](./updated_results.png)
+
+### Pytest Report.html:
+![Pytest-Report.html](./pytest_reports.png)
 
 ## Future Improvements:
 
-- Enhance test coverage by automating more scenarios. Exploring more Taskwarrior commands, such as `append`, `denotate`, `duplicate`, `execute`, `export`, `import`, `log`, `prepend`, `purge`, `synchronize`, `undo`, and `version`.
+- Enhance test coverage by automating more scenarios. Exploring more Taskwarrior commands, such as `denotate`, `duplicate`, `execute`, `export`, `import`, `log`, `prepend`, `purge`, `synchronize`, `undo`, and `version`.
 - Implementing parameterized tests for API endpoints to test different input combinations.
 - Integrating test reporting with pytest-html for better visualization of test results.
 - Implementing error handling and logging functionality in the automation script to provide detailed feedback and troubleshooting information to users when errors occur during script execution.

@@ -1,11 +1,11 @@
 import requests
 import pytest
-
-BASE_URL = "https://fakestoreapi.com/carts"
+from config import BASE_URL
 
 def test_delete_cart():
     cart_id = 6
-    response = requests.delete(f"{BASE_URL}/{cart_id}")
+    response = requests.delete(f"{BASE_URL}/carts/{cart_id}")
     assert response.status_code == 200
     cart = response.json()
     assert cart['id'] == cart_id
+    print(response.json())

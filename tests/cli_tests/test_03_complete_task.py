@@ -1,11 +1,5 @@
-import subprocess
 import pytest
-
-def run_task_command(command):
-    result = subprocess.run(command, shell=True, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"Error running command '{command}': {result.stderr}")
-    return result.stdout.strip(), result.stderr.strip()
+from utils import run_task_command
 
 def test_complete_task():
     run_task_command('task add "Given Task Done" due:today')
@@ -13,4 +7,5 @@ def test_complete_task():
     run_task_command('task 3 done')
     stdout, _ = run_task_command('task completed')
     assert "Given Task Done" in stdout
+    print(stdout)
 
