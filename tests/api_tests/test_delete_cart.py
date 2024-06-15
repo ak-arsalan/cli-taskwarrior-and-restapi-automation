@@ -1,10 +1,8 @@
 import requests
-import pytest
-from config import BASE_URL
 
-def test_delete_cart():
+def test_delete_cart(base_url):
     cart_id = 6
-    response = requests.delete(f"{BASE_URL}/carts/{cart_id}")
+    response = requests.delete(f"{base_url}/carts/{cart_id}")
     assert response.status_code == 200
     cart = response.json()
     assert cart['id'] == cart_id

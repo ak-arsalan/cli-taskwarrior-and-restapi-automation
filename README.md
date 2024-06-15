@@ -23,6 +23,10 @@ pip install requests
 ```bash
 pytest
 ```
+#### To create a pytest report, write the following command on Terminal:
+```bash
+pytest --html=./report/report.html
+```
 
 ### Test Scenarios
 #### Part 1 covers the following scenarios:
@@ -41,7 +45,6 @@ pytest
 8. **Searching for Tasks by Tags**: Adds tasks with tags and checks if tasks with specific tags are listed correctly.
 9. **Recurring Tasks**: Adds a recurring task with a weekly recurrence and ensures it's listed correctly.
 10. **Annotating a Task**: Adds an annotation to a task and verifies if it's displayed correctly.
-11. **Append a Task**: Adds append keyword to a task and verifies if it's displayed correctly.
 
 ### Part 2 covers API Tests (Fake Store API)
 
@@ -64,7 +67,7 @@ pytest
 
 ## Future Improvements:
 
-- Enhance test coverage by automating more scenarios. Exploring more Taskwarrior commands, such as `denotate`, `duplicate`, `execute`, `export`, `import`, `log`, `prepend`, `purge`, `synchronize`, `undo`, and `version`.
+- Enhance test coverage by automating more scenarios. Exploring more Taskwarrior commands, such as `duplicate`, `execute`, `denotate`, `export`, `import`, `log`, `prepend`, `purge`, `synchronize`, `undo`, and `version`.
 - Implementing parameterized tests for API endpoints to test different input combinations.
 - Integrating test reporting with pytest-html for better visualization of test results.
 - Implementing error handling and logging functionality in the automation script to provide detailed feedback and troubleshooting information to users when errors occur during script execution.

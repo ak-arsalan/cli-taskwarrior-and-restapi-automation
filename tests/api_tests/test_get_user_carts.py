@@ -1,10 +1,8 @@
 import requests
-import pytest
-from config import BASE_URL
 
-def test_get_user_carts():
+def test_get_user_carts(base_url):
     user_id = 2
-    response = requests.get(f"{BASE_URL}/carts/user/{user_id}")
+    response = requests.get(f"{base_url}/carts/user/{user_id}")
     assert response.status_code == 200
     carts = response.json()
     for cart in carts:

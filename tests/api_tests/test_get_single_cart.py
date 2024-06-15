@@ -1,10 +1,8 @@
 import requests
-import pytest
-from config import BASE_URL
 
-def test_get_single_cart():
+def test_get_single_cart(base_url):
     cart_id = 5
-    response = requests.get(f"{BASE_URL}/carts/{cart_id}")
+    response = requests.get(f"{base_url}/carts/{cart_id}")
     assert response.status_code == 200
     cart = response.json()
     assert cart['id'] == cart_id
