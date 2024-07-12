@@ -14,7 +14,7 @@ pipeline {
 
         stage('Set Up Python') {
             steps {
-                sh 'python -m pip install --upgrade pip'
+                sh 'python3 -m pip install --upgrade pip'
             }
         }
 
@@ -26,9 +26,7 @@ pipeline {
 
         stage('Install Taskwarrior') {
             steps {
-                sh '''
-                apt-get update && apt-get install -y taskwarrior
-                '''
+                sh 'apt-get update && apt-get install -y taskwarrior'
             }
         }
 
