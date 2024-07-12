@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.10.12'
-            args '-v /jenkins_home/cache:/cache'
-        }
-    }
+    agent any
 
     environment {
         GITHUB_REPO = 'https://github.com/ak-arsalan/cli-taskwarrior-and-restapi-automation.git'
@@ -31,7 +26,9 @@ pipeline {
 
         stage('Install Taskwarrior') {
             steps {
-                sh 'sudo apt-get update && sudo apt-get install -y taskwarrior'
+                sh '''
+                apt-get update && apt-get install -y taskwarrior
+                '''
             }
         }
 
@@ -49,7 +46,7 @@ pipeline {
 
     post {
         always {
-            junit 'reports/**/*.xml' 
+            junit 'reports/**/*.xml'
         }
         success {
             echo 'All tests passed!'
