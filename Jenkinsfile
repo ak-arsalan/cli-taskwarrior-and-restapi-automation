@@ -7,13 +7,13 @@ pipeline {
     }
 
     environment {
-        GITHUB_REPO = 'https://github.com/yourusername/yourrepo.git'
+        GITHUB_REPO = 'https://github.com/ak-arsalan/cli-taskwarrior-and-restapi-automation.git'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git url: "${GITHUB_REPO}", branch: 'main'
+                git url: "${GITHUB_REPO}", branch: 'code-refactoring'
             }
         }
 
